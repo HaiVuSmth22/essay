@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YourBrand</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Side Menu -->
+  <div id="sideMenu" class="side-menu">
+    <div class="side-menu-header">
+      <span onclick="toggleMenu()">&times; Close</span>
+    </div>
+    <ul>
+      <li><a href="tops.html">Tops</a></li>
+      <li><a href="outerwear.html">Outerwears</a></li>
+      <li><a href="bottoms.html">Bottoms</a></li>
+    </ul>
+  </div>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="nav-left">
+      <div class="menu-toggle" onclick="toggleMenu()">☰ Menu</div>
+    </div>
+    <div class="nav-center">
+      <div class="logo">YourBrand</div>
+    </div>
+    <div class="nav-right">
+      <a href="index.html">Home</a>
+      <a href="lookbook.html">Lookbook</a>
+      <a href="story.html">Story</a>
+      <div class="search-bar">
+        <span class="search-icon"><i class="fas fa-search"></i></span>
+        <input type="text" placeholder="Tìm kiếm">
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section with video -->
+  <section class="hero">
+    <video class="hero-video" autoplay muted loop>
+      <source src="media/banner.mp4" type="video/mp4">
+    </video>
+    <div class="hero-text">
+      <h1>Crafted for the Modern Soul</h1>
+      <p>Where elegance meets innovation.</p>
+      <a href="#" class="btn">Explore Now</a>
+    </div>
+  </section>
+
+<!-- Lookbook Section -->
+<section class="lookbook">
+  <h2>Lookbook</h2>
+  <div class="lookbook-gallery">
+    <img src="images/look1.jpg" alt="Look 1">
+    <img src="images/look2.jpg" alt="Look 2">
+    <img src="images/look3.jpg" alt="Look 3">
+  </div>
+</section>
+
+<!-- Story Section -->
+<section class="story">
+  <h2>Our Story</h2>
+  <p>
+    Founded with a passion for timeless elegance, YourBrand merges modern minimalism with artisanal heritage.
+    Every piece reflects our dedication to craftsmanship and meaningful storytelling.
+  </p>
+</section>
+
+  <!-- Category Buttons -->
+  <section class="category-buttons">
+    <div class="category">
+      <img src="images/outerwear.jpg" alt="Outerwears">
+      <span>Outerwears</span>
+    </div>
+
+    <div class="category">
+      <img src="images/tops.jpg" alt="Tops">
+      <span class="category-label">Tops</span><br>
+      <span class="category-sub">Tops</span></span>
+    </div>
+
+    <div class="category">
+      <img src="images/bottoms.jpg" alt="Bottoms">
+      <span class="category-label">Bottoms</span><br>
+      <span class="category-sub">Bottoms</span>
+    </div>
+  </section>
+
+  <!-- Footer with Contact Info -->
+  <footer class="footer">
+    <p>Phone: 0123 456 789 | Email: yourbrand@example.com</p>
+    <p>Facebook | Instagram | Store Address</p>
+    <p>© 2025 YourBrand. All rights reserved.</p>
+  </footer>
+
+  <!-- JS Toggle -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("sideMenu");
+      menu.classList.toggle("open");
+    }
+  </script>
+</body>
+</html>
