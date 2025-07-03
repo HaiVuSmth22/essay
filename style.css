@@ -4,26 +4,26 @@
     padding: 0;
     box-sizing: border-box;
   }
-  
+ 
   body {
     font-family: 'Inter', sans-serif;
     background-color: #faf9f6;
     color: #111;
   }
-  
+ 
   a {
     text-decoration: none;
     color: inherit;
   }
-  
+ 
   h1, h2, h3 {
     font-family: 'Playfair Display', serif;
   }
-  
+ 
   /* Navbar */
   .navbar {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     padding: 20px 60px;
     position: sticky;
@@ -31,13 +31,13 @@
     z-index: 999;
     background: white;
   }
-  
+ 
   .menu-toggle {
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
   }
-  
+ 
   .logo {
     flex: 1;
     text-align: center;
@@ -45,22 +45,21 @@
     font-weight: 600;
     letter-spacing: 2px;
   }
-  
+ 
   .nav-links {
-  display: flex;
-  justify-content: flex-start;  
-  align-items: center;
-  gap: 35px;
-  flex: 1;
-}
-
-  
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 35px;
+    flex: 1;
+  }
+ 
   .nav-links a {
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 400;
     transition: color 0.3s ease;
   }
-  
+ 
   .nav-links a:hover {
     color: #aa8453;
   }
@@ -85,37 +84,37 @@
   justify-content: flex-end;
   gap: 20px;
 }
-  
-  /* Search Bar */
-  .search-bar {
-    display: flex;
-    align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    padding: 6px 12px;
-    background-color: white;
-    width: 180px;
-    transition: 0.3s ease;
-  }
-  
-  .search-bar:hover {
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .search-icon {
-    font-size: 16px;
-    margin-right: 8px;
-    color: #555;
-  }
-  
-  .search-bar input {
-    border: none;
-    outline: none;
-    font-size: 14px;
-    width: 100%;
-    background: transparent;
-  }
-  
+ 
+ /* Search Bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 6px 12px;
+  background-color: white;
+  width: 180px;
+  transition: 0.3s ease;
+}
+
+.search-bar:hover {
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-icon {
+  font-size: 16px;
+  margin-right: 8px;
+  color: #555;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  width: 100%;
+  background: transparent;
+}
+ 
   /* Hero Section with video */
   .hero {
     position: relative;
@@ -123,7 +122,7 @@
     height: 100vh;
     overflow: hidden;
   }
-  
+ 
   .hero-video {
     position: absolute;
     top: 0;
@@ -134,7 +133,7 @@
     filter: brightness(70%);
     z-index: -1;
   }
-  
+ 
   .hero-text {
     position: absolute;
     bottom: 60px;
@@ -143,17 +142,17 @@
     max-width: 500px;
     z-index: 1;
   }
-  
+ 
   .hero-text h1 {
     font-size: 50px;
     margin-bottom: 10px;
   }
-  
+ 
   .hero-text p {
     font-size: 18px;
     margin-bottom: 20px;
   }
-  
+ 
   .btn {
     padding: 10px 25px;
     background-color: #aa8453;
@@ -163,7 +162,7 @@
     border: none;
     cursor: pointer;
   }
-  
+ 
   /* Product Categories as Image Buttons */
   .category-buttons {
     display: flex;
@@ -172,36 +171,36 @@
     padding: 60px;
     flex-wrap: wrap;
   }
-  
+ 
   .category-buttons .category {
     width: 150px;
     text-align: center;
     cursor: pointer;
   }
-  
+ 
   .category-buttons .category img {
     width: 100%;
     border-radius: 12px;
     margin-bottom: 10px;
     transition: transform 0.3s ease;
   }
-  
+ 
   .category-buttons .category img:hover {
     transform: scale(1.05);
   }
-  
+ 
   .category-buttons .category span {
     font-size: 14px;
     font-weight: 500;
   }
-  
+ 
   /* Product Section */
   .product-section {
     padding: 60px;
     background-color: #fdfcf9;
     text-align: center;
   }
-  
+ 
   .product-row {
     display: flex;
     justify-content: center;
@@ -209,7 +208,7 @@
     flex-wrap: wrap;
     margin-top: 40px;
   }
-  
+ 
   .product {
     background-color: white;
     padding: 20px;
@@ -219,29 +218,29 @@
     transition: transform 0.3s ease;
     text-align: center;
   }
-  
+ 
   .product:hover {
     transform: translateY(-5px);
   }
-  
+ 
   .product img {
     width: 100%;
     border-radius: 8px;
     object-fit: cover;
     margin-bottom: 15px;
   }
-  
+ 
   .product h3 {
     font-size: 18px;
     margin-bottom: 5px;
   }
-  
+ 
   .product p {
     font-size: 16px;
     color: #555;
     margin-bottom: 15px;
   }
-  
+ 
   .product button {
     background-color: #aa8453;
     color: white;
@@ -251,11 +250,11 @@
     font-weight: 500;
     cursor: pointer;
   }
-  
+ 
   .product button:hover {
     background-color: #8a693d;
   }
-  
+ 
   /* Side Menu */
   .side-menu {
     position: fixed;
@@ -270,82 +269,124 @@
     transition: left 0.3s ease;
     overflow-y: auto;
   }
-  
+ 
   .side-menu.open {
     left: 0;
   }
-  
+ 
   .side-menu-header {
     display: flex;
     justify-content: flex-end;
     font-weight: bold;
     margin-bottom: 20px;
   }
-  
+ 
   .side-menu ul {
     list-style: none;
     padding: 0;
   }
-  
+ 
   .side-menu li {
     margin-bottom: 15px;
   }
-  
+ 
   .side-menu a {
     font-size: 18px;
     color: #111;
     transition: 0.2s;
   }
-  
+ 
   .side-menu a:hover {
     color: #aa8453;
   }
-  
-/* Lookbook Section */
-.lookbook {
-    text-align: center;
-    padding: 60px 20px;
-    background-color: #fff;
+ 
+/* Cart Page Styles */
+.cart-section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+.cart-item img {
+  width: 80px;
+  height: auto;
+}
+.checkout-form input,
+.checkout-form select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.checkout-form button {
+  background-color: #aa8453;
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Lookbook Section Styles */
+.lookbook-section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+.lookbook-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-family: 'Playfair Display', serif;
+}
+.lookbook-gallery {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.lookbook-item {
+  flex: 1 1 calc(33.333% - 20px);
+  text-align: center;
+}
+.lookbook-item img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+.lookbook-item img:hover {
+  transform: scale(1.03);
+}
+.lookbook-item button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #aa8453;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .lookbook-item {
+    flex: 1 1 100%;
   }
-  
-  .lookbook h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-  }
-  
-  .lookbook-gallery {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  
-  .lookbook-gallery img {
-    width: 220px;
-    height: 320px;
-    object-fit: cover;
-    border-radius: 10px;
-  }
-  
-  /* Story Section */
-  .story {
-    padding: 60px 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    background-color: #f7f6f3;
-  }
-  
-  .story h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-  }
-  
-  .story p {
-    font-size: 16px;
-    color: #444;
-    line-height: 1.6;
-  }
+}
+
 
   /* Footer */
   .footer {
@@ -356,7 +397,7 @@
     border-top: 1px solid #eee;
     background-color: white;
   }
-  
+ 
   /* Responsive fix */
   @media (max-width: 768px) {
     .navbar {
@@ -364,14 +405,14 @@
       align-items: flex-start;
       gap: 15px;
     }
-  
+ 
     .logo {
       text-align: left;
     }
-  
+ 
     .nav-links {
       flex-direction: column;
       align-items: flex-start;
     }
   }
-  
+ 
