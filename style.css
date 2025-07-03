@@ -47,12 +47,13 @@
   }
   
   .nav-links {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 35px;
-    flex: 1;
-  }
+  display: flex;
+  justify-content: flex-start;  
+  align-items: center;
+  gap: 35px;
+  flex: 1;
+}
+
   
   .nav-links a {
     font-size: 20px;
