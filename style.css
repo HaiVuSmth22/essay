@@ -52,6 +52,7 @@
     align-items: center;
     gap: 35px;
     flex: 1;
+    list-style: none;
   }
  
   .nav-links a {
