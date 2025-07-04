@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart & Checkout</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .cart-section {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+    }
+    .cart-item img {
+      width: 80px;
+      height: auto;
+    }
+    .checkout-form input, .checkout-form select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .checkout-form button {
+      background-color: #aa8453;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <section class="cart-section">
+    <h2>Giỏ hàng của bạn</h2>
+    <div class="cart-item">
+      <div>
+        <img src="images/product1.jpg" alt="Product">
+        <p>Túi da cổ điển</p>
+      </div>
+      <p>2.500.000₫</p>
+    </div>
+    <div class="cart-item">
+      <div>
+        <img src="images/product2.jpg" alt="Product">
+        <p>Áo sơ mi trắng</p>
+      </div>
+      <p>1.200.000₫</p>
+    </div>
+
+    <h3>Tổng: 3.700.000₫</h3>
+
+    <h2>Thông tin thanh toán</h2>
+    <form class="checkout-form">
+      <input type="text" placeholder="Họ và tên" required>
+      <input type="tel" placeholder="Số điện thoại" required>
+      <input type="email" placeholder="Email" required>
+
+      <label for="payment-method">Hình thức thanh toán</label>
+      <select id="payment-method" required>
+        <option value="">-- Chọn --</option>
+        <option value="cod">Thanh toán khi nhận hàng (COD)</option>
+        <option value="bank">Chuyển khoản ngân hàng</option>
+        <option value="momo">Ví điện tử (Momo/ZaloPay...)</option>
+      </select>
+
+      <button type="submit">Thanh toán</button>
+    </form>
+  </section>
+</body>
+</html>

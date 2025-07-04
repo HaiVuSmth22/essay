@@ -52,12 +52,14 @@
     align-items: center;
     gap: 35px;
     flex: 1;
+    list-style: none;
   }
  
   .nav-links a {
-    font-size: 15px;
-    font-weight: 400;
+    font-size: 22px;
+    font-weight: 300;
     transition: color 0.3s ease;
+    font-family: 'Quicksand', sans-serif;
   }
  
   .nav-links a:hover {
