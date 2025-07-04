@@ -56,9 +56,10 @@
   }
  
   .nav-links a {
-    font-size: 20px;
-    font-weight: 400;
+    font-size: 22px;
+    font-weight: 300;
     transition: color 0.3s ease;
+    font-family: 'Quicksand', sans-serif;
   }
  
   .nav-links a:hover {
