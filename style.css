@@ -20,7 +20,7 @@
     font-family: 'Playfair Display', serif;
   }
  
-  /* Navbar */
+  /* Navbar */  /* tôi sửa phần này, b sửa j thì bảo tôi, ko thì bỏ qua nhé */ 
   .navbar {
     display: flex;
     justify-content: space-between;
@@ -195,7 +195,7 @@
     font-weight: 500;
   }
  
-  /* Product Section */
+  /* Product Section */ /* có thể tôi sẽ edit phần này tí, test các kiểu khác nhau*/
   .product-section {
     padding: 60px;
     background-color: #fdfcf9;
