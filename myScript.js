@@ -74,3 +74,10 @@ function removeItem(index) {
 
 // Initial render
 updateCartDisplay();
+
+
+//dem san pham
+document.addEventListener('DOMContentLoaded', () => {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  document.getElementById('cart-count').innerText = cart.length;
+});

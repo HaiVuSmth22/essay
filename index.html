@@ -26,12 +26,13 @@
       <div class="menu-toggle" onclick="toggleMenu()">☰ Menu</div>
     </div>
     <div class="nav-center">
-      <div class="logo">YourBrand</div>
+      <a href="index.html" class="logo">YourBrand</a>
     </div>
    <div class="nav-right">
-      <div class="cart">
-         <a href="cart.html" class="cart-icon">Cart</a>
-      </div>
+   <a href="cart.html" class="cart-icon">
+     <img src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="Cart Icon">
+     <span class="cart-count" id="cart-count">0</span>
+   </a>
        <div class="search-bar">
         <span class="search-icon"><i class="fas fa-search"></i></span>
         <input type="text" placeholder="Tìm kiếm">
@@ -75,12 +76,12 @@
     <p>© 2025 YourBrand. All rights reserved.</p>
   </footer>
 
-  <!-- JS Toggle -->
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById("sideMenu");
-      menu.classList.toggle("open");
-    }
-  </script>
+
+<script>//js toggle menubar
+function toggleMenu() {
+  const menu = document.getElementById("sideMenu");
+  menu.classList.toggle("open");
+}
+</script>
 </body>
 </html>
