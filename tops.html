@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,6 +25,11 @@
       <a href="index.html" class="logo">YourBrand</a>
 
       <div class="nav-right">
+    <a href="cart.html" class="cart-icon">
+  <img src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="Cart Icon">
+  <span class="cart-count" id="cart-count">0</span>
+    </a>
+
     <div class="cart">
          <a href="cart.html" class="cart-icon">Cart</a>
       </div>
@@ -68,7 +75,28 @@
     <p>Facebook | Instagram | Store Address</p>
     <p>© 2025 YourBrand. All rights reserved.</p>
   </footer>
+=======
+  </footer>
+  <script src="myScript.js">
+      
+      function toggleMenu() {
+      const menu = document.getElementById("sideMenu");
+      menu.classList.toggle("open");
+    }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    document.getElementById('cart-count').innerText = cart.length;
+  });
+
+  </script>
+  </body>
+>>>>>>> Stashed changes
+=======
+  </footer>
   <script src="myScript.js">
 
   </script>
   </body>
+>>>>>>> main
+>>>>>>> 10fdc5eb8a413b8c20e1e8c389cb8dfb6769e443
