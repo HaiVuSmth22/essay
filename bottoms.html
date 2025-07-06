@@ -23,9 +23,11 @@
       <a href="index.html" class="logo">YourBrand</a>
 
       <div class="nav-right">
-        <div class="cart">
-         <a href="cart.html" class="cart-icon">Cart</a>
-      </div>
+    <a href="cart.html" class="cart-icon">
+  <img src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="Cart Icon">
+  <span class="cart-count" id="cart-count">0</span>
+    </a>
+
         <div class="search-bar">
         <span class="search-icon"><i class="fas fa-search"></i></span>
         <input type="text" placeholder="Tìm kiếm">
@@ -65,4 +67,22 @@
     <p>Phone: 0123 456 789 | Email: yourbrand@example.com</p>
     <p>Facebook | Instagram | Store Address</p>
     <p>© 2025 YourBrand. All rights reserved.</p>
+<<<<<<< Updated upstream
   </footer>
+=======
+  </footer>
+  <script src="myScript.js">
+      
+      function toggleMenu() {
+      const menu = document.getElementById("sideMenu");
+      menu.classList.toggle("open");
+    }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    document.getElementById('cart-count').innerText = cart.length;
+  });
+
+  </script>
+</body>
+>>>>>>> Stashed changes
