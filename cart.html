@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cart & Checkout</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <section class="cart-section">
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <h3 id="cart-total">Tổng: 0₫</h3>
+
+    <h2>Thông tin thanh toán</h2>
+    <form class="checkout-form">
+      <input type="text" placeholder="Họ và tên" required />
+      <input type="tel" placeholder="Số điện thoại" required />
+      <input type="email" placeholder="Email" required />
+
+      <label for="payment-method">Hình thức thanh toán</label>
+      <select id="payment-method" required>
+        <option value="">-- Chọn --</option>
+        <option value="cod">Thanh toán khi nhận hàng (COD)</option>
+        <option value="bank">Chuyển khoản ngân hàng</option>
+        <option value="momo">Ví điện tử (Momo/ZaloPay...)</option>
+      </select>
+
+      <button type="submit">Thanh toán</button>
+    </form>
+  </section>
+   <script src="myScript.js"></script>
+</body>
+</html>
