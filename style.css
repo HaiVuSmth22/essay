@@ -74,6 +74,35 @@
   align-items: center;
 }
 
+/* Cart Icon */
+.cart-icon {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.cart-icon img {
+  width: 100%;
+  height: auto;
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background-color: #111;
+  color: white;
+  font-size: 12px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .nav-center {
   justify-content: center;
 }
