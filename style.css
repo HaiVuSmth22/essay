@@ -197,12 +197,15 @@
   }
  
   /* Product Section */ /* có thể tôi sẽ edit phần này tí, test các kiểu khác nhau*/
-  .product-section {
-    padding: 60px;
+  .product-section h2 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 350;
+    font-size: 30px;
+    padding: 40px;
     background-color: #fdfcf9;
     text-align: center;
   }
- 
+   
   .product-row {
     display: flex;
     justify-content: center;
