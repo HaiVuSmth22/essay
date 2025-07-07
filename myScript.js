@@ -81,3 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
   document.getElementById('cart-count').innerText = cart.length;
 });
+//js toggle menubar
+function toggleMenu() {
+  const menu = document.getElementById("sideMenu");
+  menu.classList.toggle("open");
+}
