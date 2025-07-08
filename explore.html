@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Explore All Products</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="nav-left">
+      <div class="menu-toggle" onclick="toggleMenu()">☰ Menu</div>
+    </div>
+    <div class="nav-center">
+      <a href="index.html" class="logo">YourBrand</a>
+    </div>
+    <div class="nav-right">
+      <a href="cart.html" class="cart-icon">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count">0</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Explore All Products -->
+  <section class="products-section">
+    <h2>All Collections</h2>
+
+    <div class="product-row">
+      <!-- Outerwear -->
+      <div class="product">
+        <img src="images/outerwear1.jpg" alt="Jacket 1">
+        <h3>Jacket 1</h3>
+        <p>$450</p>
+        <button onclick="addToCart('Jacket 1', 450)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="images/outerwear2.jpg" alt="Jacket 2">
+        <h3>Jacket 2</h3>
+        <p>$750</p>
+        <button onclick="addToCart('Jacket 2', 750)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="images/outerwear3.jpg" alt="Hoodie 3">
+        <h3>Hoodie 3</h3>
+        <p>$800</p>
+        <button onclick="addToCart('Hoodie 3', 800)">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-row">
+      <!-- Pants -->
+      <div class="product">
+        <img src="images/pants1.jpg" alt="Pants 1">
+        <h3>Pants 1</h3>
+        <p>$450</p>
+        <button onclick="addToCart('Pants 1', 450)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="images/pants2.jpg" alt="Pants 2">
+        <h3>Pants 2</h3>
+        <p>$750</p>
+        <button onclick="addToCart('Pants 2', 750)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="images/pants3.jpg" alt="Pants 3">
+        <h3>Pants 3</h3>
+        <p>$800</p>
+        <button onclick="addToCart('Pants 3', 800)">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-row">
+      <!-- Shirts -->
+      <div class="product">
+        <img src="https://vn.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-short-sleeved-jacquard-silk-blend-shirt--HRS30WKSY702_PM2_Front%20view.jpg" alt="Shirts 1">
+        <h3>Shirts 1</h3>
+        <p>$450</p>
+        <button onclick="addToCart('Shirts 1', 450)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="images/shirts2.jpg" alt="Shirts 2">
+        <h3>Shirts 2</h3>
+        <p>$750</p>
+        <button onclick="addToCart('Shirts 2', 750)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="images/shirts3.jpg" alt="Shirts 3">
+        <h3>Shirts 3</h3>
+        <p>$800</p>
+        <button onclick="addToCart('Shirts 3', 800)">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Phone: 0123 456 789 | Email: yourbrand@example.com</p>
+    <p>Facebook | Instagram | Store Address</p>
+    <p>© 2025 YourBrand. All rights reserved.</p>
+  </footer>
+
+  <script src="myScript.js"></script>
+</body>
+</html>
