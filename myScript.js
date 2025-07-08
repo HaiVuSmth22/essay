@@ -72,12 +72,27 @@ function removeItem(index) {
   updateCartDisplay();
 }
 
-// Initial render
-updateCartDisplay();
+// Update cart icon count
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartCount = document.getElementById("cart-count");
+  if (cartCount) {
+    const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+    cartCount.textContent = totalQuantity;
+  }
+}
 
+// JS toggle menu
+function toggleMenu() {
+  const menu = document.getElementById("sideMenu");
+  menu.classList.toggle("open");
+}
 
-//dem san pham
-document.addEventListener('DOMContentLoaded', () => {
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
-  document.getElementById('cart-count').innerText = cart.length;
+// DOM ready
+document.addEventListener("DOMContentLoaded", () => {
+  updateCartCount();
+
+  if (document.getElementById("cart-items")) {
+    updateCartDisplay();
+  }
 });
