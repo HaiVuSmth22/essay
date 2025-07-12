@@ -7,6 +7,24 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- (Tùy chọn) Navbar để icon giỏ hàng hoạt động đầy đủ -->
+  <div class="navbar">
+    <div class="nav-left">
+      <div class="menu-toggle" onclick="toggleMenu()">☰ Menu</div>
+    </div>
+    <div class="nav-center">
+      <a href="index.html" class="logo">YourBrand</a>
+    </div>
+    <div class="nav-right">
+      <a href="cart.html" class="cart-icon">
+        <img src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="Cart Icon">
+        <span class="cart-count" id="cart-count">0</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Cart Section -->
   <section class="cart-section">
     <h2>Your Cart</h2>
     <div id="cart-items"></div>
@@ -29,6 +47,7 @@
       <button type="submit">Thanh toán</button>
     </form>
   </section>
-   <script src="myScript.js"></script>
+
+  <script src="myScript.js"></script>
 </body>
 </html>
