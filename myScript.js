@@ -29,7 +29,7 @@ function updateCartDisplay() {
     cartTotalEl.textContent = "Total: $0.00";
     return;
   }
-
+//Change quantity in cart and calculate total
   cart.forEach((item, index) => {
     const itemTotal = item.price * item.quantity;
     total += itemTotal;
@@ -71,6 +71,7 @@ function removeItem(index) {
   cart.splice(index, 1);
   localStorage.setItem("cart", JSON.stringify(cart));
   updateCartDisplay();
+  updateCartCount();
 }
 
 // Update cart icon count
