@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>YourBrand - Explore</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Nunito&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -115,7 +116,15 @@
   <p>Facebook | Instagram | Store Address</p>
   <p>© 2025 YourBrand. All rights reserved.</p>
 </footer>
-
+<div id="notification-overlay" class="notification-overlay hidden">
+  <div id="cart-notification" class="cart-notification">
+    <p>Item added to cart.</p>
+    <div class="notification-actions">
+      <button onclick="closeNotification()">Continue Shopping</button>
+      <button onclick="window.location.href='cart.html'">View Cart</button>
+    </div>
+  </div>
+</div>
 <!-- Script -->
 <script src="myScript.js"></script>
 </body>
