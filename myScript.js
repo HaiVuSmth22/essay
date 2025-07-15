@@ -1,3 +1,61 @@
+// Products list
+const allProducts = [
+  {
+    name: "Shirts 1",
+    price: "$450",
+    img: "https://vn.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-short-sleeved-jacquard-silk-blend-shirt--HRS30WKSY702_PM2_Front%20view.jpg",
+    page: "tops.html"
+  },
+  {
+    name: "Shirts 2",
+    price: "$750",
+    img: "your-fallback-image.jpg",
+    page: "tops.html"
+  },
+  {
+    name: "Shirts 3",
+    price: "$800",
+    img: "images/shirts3.jpg",
+    page: "tops.html"
+  },
+  {
+    name: "Jacket 1",
+    price: "$450",
+    img: "images/jacket1.jpg",
+    page: "outerwear.html"
+  },
+  {
+    name:"Jacket 2",
+    price: "$750",
+    img: "images/shirts3.jpg",
+    page: "outerwear.html"
+  },
+  {
+    name: "Jacket 3",
+    price: "$800",
+    img: "your-fallback-image.jpg",
+    page: "outerwear.html"
+  },
+  {
+    name: "Pants 1",
+    price: "$450",
+    img: "images/shirts3.jpg",
+    page: "bottoms.html"
+  },
+  {
+    name: "Pants 2",
+    price: "$750",
+    img: "images/jacket1.jpg",
+    page: "bottoms.html"
+  },
+  {
+    name:"Pants 3",
+    price: "$800",
+    img: "images/shirts3.jpg",
+    page: "bottoms.html"
+  },
+];
+
 /* cart feature */
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -99,3 +157,38 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCartDisplay();
   }
 });
+// Search bar function
+function search_products() {
+  const input = document.getElementById("searchbar").value.trim().toLowerCase();
+  const resultsContainer = document.getElementById("search-results");
+  resultsContainer.innerHTML = "";
+
+  if (!input) return;
+
+  const matches = allProducts.filter(p => p.name.toLowerCase().includes(input));
+
+  if (matches.length === 0) {
+    resultsContainer.innerHTML = `<div class="search-result-item"><em>No results found.</em></div>`;
+    return;
+  }
+
+  matches.forEach(product => {
+    const item = document.createElement("div");
+    item.className = "search-result-item";
+    item.innerHTML = `
+      <img src="${product.img}" alt="${product.name}">
+      <div class="search-result-text">
+        <strong>${product.name}</strong>
+        <span>${product.price}</span>
+      </div>
+    `;
+
+    item.onclick = () => {
+      window.location.href = product.page + `#${encodeURIComponent(product.name)}`;
+    };
+
+    resultsContainer.appendChild(item);
+  });
+}
+
+
