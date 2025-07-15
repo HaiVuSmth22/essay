@@ -29,7 +29,7 @@ function updateCartDisplay() {
     cartTotalEl.textContent = "Total: $0.00";
     return;
   }
-//Change quantity in cart and calculate total
+//Change quantity in cart checkout and calculate total
   cart.forEach((item, index) => {
     const itemTotal = item.price * item.quantity;
     total += itemTotal;
@@ -55,6 +55,7 @@ function updateCartDisplay() {
   });
 
   cartTotalEl.textContent = `Total: $${total.toFixed(2)}`;
+  updateCartCount();
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
