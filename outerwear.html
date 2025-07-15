@@ -64,12 +64,20 @@
 
     <!-- Thêm sản phẩm khác tại đây -->
   </section>
-
   <footer class="footer">
     <p>Phone: 0123 456 789 | Email: yourbrand@example.com</p>
     <p>Facebook | Instagram | Store Address</p>
     <p>© 2025 YourBrand. All rights reserved.</p>
   </footer>
+  <div id="notification-overlay" class="notification-overlay hidden">
+  <div id="cart-notification" class="cart-notification">
+    <p>Item added to cart.</p>
+    <div class="notification-actions">
+      <button onclick="closeNotification()">Continue Shopping</button>
+      <button onclick="window.location.href='cart.html'">View Cart</button>
+    </div>
+  </div>
+</div>
   <script src="myScript.js"></script>
 </body>
 </html>
