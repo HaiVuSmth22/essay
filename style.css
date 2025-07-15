@@ -247,7 +247,6 @@
     flex-wrap: wrap;
     margin-top: 40px;
   }
- 
   .product {
     background-color: white;
     padding: 20px;
@@ -257,7 +256,6 @@
     transition: transform 0.3s ease;
     text-align: center;
   }
- 
   .product:hover {
     transform: translateY(-5px);
   }
