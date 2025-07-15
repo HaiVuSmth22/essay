@@ -1,19 +1,19 @@
 // Products list
 const allProducts = [
   {
-    name: "Shirts 1",
+    name: "Shirt 1",
     price: "$450",
     img: "https://vn.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-short-sleeved-jacquard-silk-blend-shirt--HRS30WKSY702_PM2_Front%20view.jpg",
     page: "tops.html"
   },
   {
-    name: "Shirts 2",
+    name: "Shirt 2",
     price: "$750",
     img: "your-fallback-image.jpg",
     page: "tops.html"
   },
   {
-    name: "Shirts 3",
+    name: "Shirt 3",
     price: "$800",
     img: "images/shirts3.jpg",
     page: "tops.html"
@@ -31,25 +31,25 @@ const allProducts = [
     page: "outerwear.html"
   },
   {
-    name: "Jacket 3",
+    name: "Hoodie 3",
     price: "$800",
     img: "your-fallback-image.jpg",
     page: "outerwear.html"
   },
   {
-    name: "Pants 1",
+    name: "Pant 1",
     price: "$450",
     img: "images/shirts3.jpg",
     page: "bottoms.html"
   },
   {
-    name: "Pants 2",
+    name: "Pant 2",
     price: "$750",
     img: "images/jacket1.jpg",
     page: "bottoms.html"
   },
   {
-    name:"Pants 3",
+    name:"Pant 3",
     price: "$800",
     img: "images/shirts3.jpg",
     page: "bottoms.html"

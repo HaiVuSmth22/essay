@@ -133,7 +133,6 @@
   width: 180px; /* Match your search-bar width */
 }
 
-
 .search-bar:hover {
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
 }
@@ -405,7 +404,6 @@
   color: #a00;
 }
 
-
 /* Lookbook Section Styles */
 .lookbook-section {
   max-width: 1200px;
@@ -453,8 +451,6 @@
     flex: 1 1 100%;
   }
 }
-
-
   /* Footer */
   .footer {
     text-align: center;
@@ -495,7 +491,6 @@
   box-shadow: none;
   z-index: 1000;
 }
-
 
 .search-result-item {
   display: flex;
