@@ -70,7 +70,7 @@ function addToCart(name, price) {
 
   localStorage.setItem('cart', JSON.stringify(cart));
   updateCartCount();
-  alert(`${name} has been added to your cart.`);
+  showNotification();
 }
 
 // DOM
@@ -189,6 +189,21 @@ function search_products() {
 
     resultsContainer.appendChild(item);
   });
+}
+
+function showNotification() {
+  const overlay = document.getElementById('notification-overlay');
+  overlay.classList.remove('hidden');
+
+  // Auto-hide after 5 seconds
+  setTimeout(() => {
+    closeNotification();
+  }, 4000);
+}
+
+function closeNotification() {
+  const overlay = document.getElementById('notification-overlay');
+  overlay.classList.add('hidden');
 }
 
 
