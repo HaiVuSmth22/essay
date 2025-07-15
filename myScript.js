@@ -61,6 +61,8 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 // Add to cart (increments if already exists)
 function addToCart(name, price) {
+  price = typeof price === "string" ? parseFloat(price.replace(/[^0-9.]/g, "")) : price;
+
   const existing = cart.find(item => item.name === name);
   if (existing) {
     existing.quantity += 1;
@@ -68,7 +70,7 @@ function addToCart(name, price) {
     cart.push({ name, price, quantity: 1 });
   }
 
-  localStorage.setItem('cart', JSON.stringify(cart));
+  localStorage.setItem("cart", JSON.stringify(cart));
   updateCartCount();
   showNotification();
 }
@@ -78,7 +80,8 @@ const cartContainer = document.getElementById("cart-items");
 const cartTotalEl = document.getElementById("cart-total");
 
 function updateCartDisplay() {
-  cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartContainer = document.getElementById("cart-items");
   cartContainer.innerHTML = "";
   let total = 0;
 
@@ -152,7 +155,6 @@ function toggleMenu() {
 // DOM ready
 document.addEventListener("DOMContentLoaded", () => {
   updateCartCount();
-
   if (document.getElementById("cart-items")) {
     updateCartDisplay();
   }
@@ -204,6 +206,71 @@ function showNotification() {
 function closeNotification() {
   const overlay = document.getElementById('notification-overlay');
   overlay.classList.add('hidden');
+}
+function sendOrderEmail(event) {
+  event.preventDefault(); // prevent form reload
+
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  if (cart.length === 0) {
+    alert("Giỏ hàng của bạn đang trống!");
+    return;
+  }
+
+  // Collect form data
+  const name = document.getElementById("customer-name").value.trim();
+  const phone = document.getElementById("customer-phone").value.trim();
+  const email = document.getElementById("customer-email").value.trim();
+  const payment = document.getElementById("payment-method").value;
+  const delivery = document.getElementById("delivery-method").value;
+
+  if (!name || !phone || !email || !payment || !delivery) {
+    alert("Vui lòng điền đầy đủ thông tin!");
+    return;
+  }
+
+  // Generate Order ID
+  const orderId = `OD${Date.now()}-${Math.floor(1000 + Math.random() * 9000)}`;
+
+  // Convert VND-style string to number (if needed)
+  const getNumber = (text) => Number(text.replace(/[₫,]/g, '').trim()) || 0;
+
+  // Calculate totals
+  const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+  // Format order list for template
+  const orderList = cart.map(item => ({
+    name: item.name,
+    price: (item.price * item.quantity).toLocaleString(),
+    units: item.quantity,
+    image_url: item.image || "https://via.placeholder.com/64"
+  }));
+
+  const cost = {
+    shipping: shipping.toLocaleString(),
+    tax: tax.toLocaleString(),
+    total: total.toLocaleString()
+  };
+
+  // Send Email via EmailJS
+  emailjs.send("service_z3nr04b", "template_zzi658c", {
+    order_id: orderId,
+    name,
+    phone,
+    email,
+    payment,
+    delivery,
+    orders: orderList,
+    cost
+  }).then(() => {
+    alert(`Đặt hàng thành công! Mã đơn hàng: ${orderId}`);
+    localStorage.removeItem("cart");
+    updateCartCount?.();
+    updateCartDisplay?.();
+    document.getElementById("checkout-form").reset();
+  }).catch(err => {
+    console.error("EmailJS Error:", err);
+    alert("Đặt hàng thất bại. Vui lòng thử lại.");
+  });
 }
 
 

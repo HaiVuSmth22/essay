@@ -42,23 +42,34 @@
     <h3 id="cart-total">Tổng: 0₫</h3>
 
     <h2>Thông tin thanh toán</h2>
-    <form class="checkout-form">
-      <input type="text" placeholder="Họ và tên" required />
-      <input type="tel" placeholder="Số điện thoại" required />
-      <input type="email" placeholder="Email" required />
+<form class="checkout-form" id="checkout-form" onsubmit="sendOrderEmail(event)">
+  <input type="text" id="customer-name" placeholder="Họ và tên" required />
+  <input type="tel" id="customer-phone" placeholder="Số điện thoại" required />
+  <input type="email" id="customer-email" placeholder="Email" required />
 
-      <label for="payment-method">Hình thức thanh toán</label>
-      <select id="payment-method" required>
-        <option value="">-- Chọn --</option>
-        <option value="cod">Thanh toán khi nhận hàng (COD)</option>
-        <option value="bank">Chuyển khoản ngân hàng</option>
-        <option value="momo">Ví điện tử (Momo/ZaloPay...)</option>
-      </select>
+  <label for="payment-method">Hình thức thanh toán</label>
+  <select id="payment-method" required>
+    <option value="">-- Chọn --</option>
+    <option value="cod">Thanh toán khi nhận hàng (COD)</option>
+    <option value="bank">Chuyển khoản ngân hàng</option>
+    <option value="momo">Ví điện tử (Momo/ZaloPay...)</option>
+  </select>
+  <label for="delivery-method">Hình thức giao hàng</label>
+  <select id="delivery-method" required>
+    <option value="">-- Chọn --</option>
+    <option value="cod">Hỏa tốc (Hà Nội Only)</option>
+    <option value="bank">GHTK</option>
+  </select>
 
-      <button type="submit">Thanh toán</button>
-    </form>
+  <button type="submit">Thanh toán</button>
+</form>
   </section>
-
-  <script src="myScript.js"></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function () {
+    emailjs.init("b0e4B3bsSeZg9f-wvservice_z3nr04b"); // Replace with your EmailJS public key
+  })();
+</script>
+<script src="myScript.js"></script>
 </body>
 </html>
