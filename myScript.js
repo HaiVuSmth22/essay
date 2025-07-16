@@ -260,11 +260,11 @@ function sendOrderEmail(event) {
   const getNumber = (text) => Number(text.replace(/[₫,]/g, '').trim()) || 0;
 
   // Calculate totals
-  const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+  const total = cart.reduce((sum, item) => sum + (parseFloat(item.price) * item.quantity), 0);
   // Format order list for template
   const orderList = cart.map(item => ({
     name: item.name,
-    price: (item.price * item.quantity).toLocaleString(),
+    price: (parseFloat(item.price) * item.quantity).toLocaleString(),
     units: item.quantity,
     image_url: item.image || "https://via.placeholder.com/64"
   }));
