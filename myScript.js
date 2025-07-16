@@ -281,7 +281,7 @@ function sendOrderEmail(event) {
     email: email,
     payment: payment,
     delivery: delivery,
-    total: total.toLocaleString()
+    total: total // Send the raw number
   };
 
   // Send data to Google Apps Script
