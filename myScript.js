@@ -230,7 +230,7 @@ function sendOrderEmail(event) {
   }
 
   // Generate Order ID
-  const orderId = `OD${Date.now()}-${Math.floor(1000 + Math.random() * 9000)}`;
+  const orderId = `OD${Math.floor(1000 + Math.random() * 9000)}`;
 
   // Convert VND-style string to number (if needed)
   const getNumber = (text) => Number(text.replace(/[₫,]/g, '').trim()) || 0;
