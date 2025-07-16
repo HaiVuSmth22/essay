@@ -50,24 +50,24 @@
   <label for="payment-method">Hình thức thanh toán</label>
   <select id="payment-method" required>
     <option value="">-- Chọn --</option>
-    <option value="cod">Thanh toán khi nhận hàng (COD)</option>
-    <option value="bank">Chuyển khoản ngân hàng</option>
-    <option value="momo">Ví điện tử (Momo/ZaloPay...)</option>
+    <option value="COD">Thanh toán khi nhận hàng (COD)</option>
+    <option value="Chuyển khoản">Chuyển khoản ngân hàng</option>
+    <option value="MOMO">Ví điện tử (Momo/ZaloPay...)</option>
   </select>
   <label for="delivery-method">Hình thức giao hàng</label>
   <select id="delivery-method" required>
     <option value="">-- Chọn --</option>
-    <option value="cod">Hỏa tốc (Hà Nội Only)</option>
-    <option value="bank">GHTK</option>
+    <option value="Hỏa tốc">Hỏa tốc (Hà Nội Only)</option>
+    <option value="GHTK">GHTK</option>
   </select>
 
   <button type="submit">Thanh toán</button>
 </form>
   </section>
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
   (function () {
-    emailjs.init("b0e4B3bsSeZg9f-wvservice_z3nr04b"); // Replace with your EmailJS public key
+    emailjs.init("5Pe9Q7-s9kbZ1uEXc"); // Replace with your EmailJS public key
   })();
 </script>
 <script src="myScript.js"></script>

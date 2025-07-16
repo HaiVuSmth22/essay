@@ -246,8 +246,6 @@ function sendOrderEmail(event) {
   }));
 
   const cost = {
-    shipping: shipping.toLocaleString(),
-    tax: tax.toLocaleString(),
     total: total.toLocaleString()
   };
 
