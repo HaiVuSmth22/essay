@@ -261,7 +261,7 @@ function sendOrderEmail(event) {
   };
 
   // Send data to Google Apps Script
-  fetch("https://script.google.com/macros/s/AKfycbwgjQSLD7pROUv24xwW7o8P2rBIVVoKGu8p-ewkxwddvLslmW_FFhJiwUhOVHlt8TB_Ug/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbwgjQSLD7pROUv24xwW7o8P2rBIVVoKGu8p-ewkxwddvLslmW_FFhJiwUhOVHlt8TB_Ug/exechttps://script.google.com/macros/s/AKfycbwfh0yyMp6HgyyMFHbzgU7pbnwXAJYlpEyXPbGyMSahdNeHoUTQfPHzJ0EAOu-0LZkepQ/exec", {
     method: "POST",
     mode: "no-cors",
     headers: {
