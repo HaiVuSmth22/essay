@@ -207,13 +207,32 @@ function closeNotification() {
   const overlay = document.getElementById('notification-overlay');
   overlay.classList.add('hidden');
 }
+
+let isSubmitting = false;
+
 function sendOrderEmail(event) {
   event.preventDefault(); // prevent form reload
+
+  if (isSubmitting) {
+    return; // Stop if already submitting
+  }
+  isSubmitting = true;
+
+  const checkoutBtn = event.target.querySelector('input[type="submit"]');
+  if (checkoutBtn) {
+    checkoutBtn.disabled = true;
+    checkoutBtn.value = "Đang xử lý...";
+  }
 
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
   if (cart.length === 0) {
     alert("Giỏ hàng của bạn đang trống!");
+    isSubmitting = false;
+    if (checkoutBtn) {
+      checkoutBtn.disabled = false;
+      checkoutBtn.value = "Đặt hàng";
+    }
     return;
   }
 
@@ -226,11 +245,16 @@ function sendOrderEmail(event) {
 
   if (!name || !phone || !email || !payment || !delivery) {
     alert("Vui lòng điền đầy đủ thông tin!");
+    isSubmitting = false;
+    if (checkoutBtn) {
+      checkoutBtn.disabled = false;
+      checkoutBtn.value = "Đặt hàng";
+    }
     return;
   }
 
-  // Generate Order ID
-  const orderId = `OD${Math.floor(1000 + Math.random() * 9000)}`;
+  // Generate Order ID (now a random 4-digit number)
+  const orderId = `${Math.floor(1000 + Math.random() * 9000)}`;
 
   // Convert VND-style string to number (if needed)
   const getNumber = (text) => Number(text.replace(/[₫,]/g, '').trim()) || 0;
@@ -261,23 +285,17 @@ function sendOrderEmail(event) {
   };
 
   // Send data to Google Apps Script
-  fetch("https://script.google.com/macros/s/AKfycbwfh0yyMp6HgyyMFHbzgU7pbnwXAJYlpEyXPbGyMSahdNeHoUTQfPHzJ0EAOu-0LZkepQ/exec", {
+  const fetchPromise = fetch("https://script.google.com/macros/s/AKfycbwfh0yyMp6HgyyMFHbzgU7pbnwXAJYlpEyXPbGyMSahdNeHoUTQfPHzJ0EAOu-0LZkepQ/exec", {
     method: "POST",
     mode: "no-cors",
     headers: {
       "Content-Type": "application/json"
     },
     body: JSON.stringify(formData)
-  })
-  .then(response => {
-    console.log("Order data sent to Google Sheets successfully.");
-  })
-  .catch(error => {
-    console.error("Error sending order data:", error);
   });
 
   // Send Email via EmailJS
-  emailjs.send("service_z3nr04b", "template_zzi658c", {
+  const emailJsPromise = emailjs.send("service_z3nr04b", "template_zzi658c", {
     order_id: orderId,
     name,
     phone,
@@ -286,14 +304,25 @@ function sendOrderEmail(event) {
     delivery,
     orders: orderList,
     cost
-  }).then(() => {
-    alert(`Đặt hàng thành công! Mã đơn hàng: ${orderId}`);
-    localStorage.removeItem("cart");
-    updateCartCount?.();
-    updateCartDisplay?.();
-    document.getElementById("checkout-form").reset();
-  }).catch(err => {
-    console.error("EmailJS Error:", err);
-    alert("Đặt hàng thất bại. Vui lòng thử lại.");
   });
+
+  Promise.all([fetchPromise, emailJsPromise])
+    .then(() => {
+      alert(`Đặt hàng thành công! Mã đơn hàng: ${orderId}`);
+      localStorage.removeItem("cart");
+      updateCartCount?.();
+      updateCartDisplay?.();
+      document.getElementById("checkout-form").reset();
+    })
+    .catch(err => {
+      console.error("Error during order submission:", err);
+      alert("Đặt hàng thất bại. Vui lòng thử lại.");
+    })
+    .finally(() => {
+      isSubmitting = false;
+      if (checkoutBtn) {
+        checkoutBtn.disabled = false;
+        checkoutBtn.value = "Đặt hàng";
+      }
+    });
 }
