@@ -25,7 +25,7 @@ const allProducts = [
     page: "outerwear.html"
   },
   {
-    name:"Jacket 2",
+    name: "Jacket 2",
     price: "$750",
     img: "images/shirts3.jpg",
     page: "outerwear.html"
@@ -49,7 +49,7 @@ const allProducts = [
     page: "bottoms.html"
   },
   {
-    name:"Pant 3",
+    name: "Pant 3",
     price: "$800",
     img: "images/shirts3.jpg",
     page: "bottoms.html"
@@ -249,6 +249,33 @@ function sendOrderEmail(event) {
     total: total.toLocaleString()
   };
 
+  // Data object to send to Google Sheets
+  const formData = {
+    orderId: orderId,
+    name: name,
+    phone: phone,
+    email: email,
+    payment: payment,
+    delivery: delivery,
+    total: total.toLocaleString()
+  };
+
+  // Send data to Google Apps Script
+  fetch("https://script.google.com/macros/s/AKfycbwgjQSLD7pROUv24xwW7o8P2rBIVVoKGu8p-ewkxwddvLslmW_FFhJiwUhOVHlt8TB_Ug/exec", {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(formData)
+  })
+  .then(response => {
+    console.log("Order data sent to Google Sheets successfully.");
+  })
+  .catch(error => {
+    console.error("Error sending order data:", error);
+  });
+
   // Send Email via EmailJS
   emailjs.send("service_z3nr04b", "template_zzi658c", {
     order_id: orderId,
@@ -270,5 +297,3 @@ function sendOrderEmail(event) {
     alert("Đặt hàng thất bại. Vui lòng thử lại.");
   });
 }
-
-
